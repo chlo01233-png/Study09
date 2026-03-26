@@ -1,9 +1,10 @@
 package com.kedu.dao;
 
-import org.apache.commons.dbcp2.BasicDataSource;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
+
+import com.kedu.dto.MemberDTO;
 
 @Repository
 public class MemberDAO {
@@ -18,6 +19,15 @@ public class MemberDAO {
 		}else {
 			return false;
 		}
+	}
+	
+public int addMember(MemberDTO dto) throws Exception {
+		
+		String sql = "insert into member values (?, ?, ?, ?, ?, ?, ?, ?, sysdate)";
+		
+		return jdbc.update(sql,dto.getId(), dto.getPw(), dto.getName(), dto.getPhone(),
+				dto.getEmail(), dto.getZipcode(), dto.getAddress1(), dto.getAddress2());
+		
 	}
 	
 	
