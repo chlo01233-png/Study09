@@ -1,6 +1,7 @@
 package com.kedu.dao;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
 
@@ -21,7 +22,19 @@ public class MemberDAO {
 		}
 	}
 	
-public int addMember(MemberDTO dto) throws Exception {
+
+	public MemberDTO select(String id){
+		String sql = "select * from members where id = ?";
+		return jdbc.queryForObject(sql, new BeanPropertyRowMapper<MemberDTO>(MemberDTO.class), id);
+	}
+	
+	public int update(MemberDTO dto){
+		String sql = "update members set phone = ?, email = ?, zipcode = ?, address1 = ?, address2 = ? where id = ?";
+		return jdbc.update(sql, dto.getPhone(), dto.getEmail(), dto.getZipcode(), 
+				dto.getAddress1(), dto.getAddress2(), dto.getId() );
+	}
+
+	public int addMember(MemberDTO dto) throws Exception {
 		
 		String sql = "insert into member values (?, ?, ?, ?, ?, ?, ?, ?, sysdate)";
 		
@@ -29,6 +42,13 @@ public int addMember(MemberDTO dto) throws Exception {
 				dto.getEmail(), dto.getZipcode(), dto.getAddress1(), dto.getAddress2());
 		
 	}
+
+
+	public int delete(String id){
+		String sql = "delete from members where id = ?";
+		return jdbc.update(sql, id);
+	}
 	
+
 	
 }
