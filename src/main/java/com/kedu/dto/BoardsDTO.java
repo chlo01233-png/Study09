@@ -11,6 +11,8 @@ public class BoardsDTO {
 	private Timestamp write_date;
 	
 	public BoardsDTO() {}
+	
+	
 
 	public BoardsDTO(int seq, String writer, String title, String contents, int view_count, Timestamp write_date) {
 		super();
@@ -21,6 +23,8 @@ public class BoardsDTO {
 		this.view_count = view_count;
 		this.write_date = write_date;
 	}
+
+
 
 	public int getSeq() {
 		return seq;
@@ -69,6 +73,14 @@ public class BoardsDTO {
 	public void setwrite_date(Timestamp write_date) {
 		this.write_date = write_date;
 	};
+	public Timestamp getWrite_date() {
+		return write_date;
+	}
+
+	public void setWrite_date(Timestamp write_date) {
+		this.write_date = write_date;
+	}
 	
 	
+
 }
