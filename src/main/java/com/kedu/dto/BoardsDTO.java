@@ -8,18 +8,18 @@ public class BoardsDTO {
 	private String title;
 	private String contents;
 	private int view_count;
-	private Timestamp write_number;
+	private Timestamp write_date;
 	
 	public BoardsDTO() {}
 
-	public BoardsDTO(int seq, String writer, String title, String contents, int view_count, Timestamp write_number) {
+	public BoardsDTO(int seq, String writer, String title, String contents, int view_count, Timestamp write_date) {
 		super();
 		this.seq = seq;
 		this.writer = writer;
 		this.title = title;
 		this.contents = contents;
 		this.view_count = view_count;
-		this.write_number = write_number;
+		this.write_date = write_date;
 	}
 
 	public int getSeq() {
@@ -62,12 +62,12 @@ public class BoardsDTO {
 		this.view_count = view_count;
 	}
 
-	public Timestamp getWrite_number() {
-		return write_number;
+	public Timestamp getWrite_date() {
+		return write_date;
 	}
 
-	public void setWrite_number(Timestamp write_number) {
-		this.write_number = write_number;
+	public void setWrite_number(Timestamp write_date) {
+		this.write_date = write_date;
 	};
 	
 	

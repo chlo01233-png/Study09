@@ -67,13 +67,21 @@ public class MemberController {
 		String id = (String)session.getAttribute("loginID");
 		MemberDTO inform = dao.select(id);
 		model.addAttribute("inform", inform);
+		
+		   
+	    if (inform == null) {
+	        session.invalidate();
+	        return "redirect:/";
+	    }
+	    System.out.println("// 🔥 DB에 없는 경우 방어");
 		return "member/mypage";
 	}
 	
 	@RequestMapping("/update")
 	public String update(MemberDTO dto) {
 		dao.update(dto);
-		return "redirect:/members/mypage";
+
+		return "redirect:/member/mypage";
 	}
 	
 	@RequestMapping("/back")

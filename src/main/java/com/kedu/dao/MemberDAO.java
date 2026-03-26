@@ -24,7 +24,7 @@ public class MemberDAO {
 	
 
 	public MemberDTO select(String id){
-		String sql = "select * from members where id = ?";
+		String sql = "select * from member where id = ?";
 		return jdbc.queryForObject(sql, new BeanPropertyRowMapper<MemberDTO>(MemberDTO.class), id);
 	}
 	
