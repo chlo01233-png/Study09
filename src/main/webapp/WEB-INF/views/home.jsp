@@ -139,7 +139,7 @@
 					   </td>
 				   <td>
 					   <div id="logoutBtn"> 
-					   		<a href="/members/logout"><input id="logoutBtn" name="logoutBtn" type="button" value="Logout"></a>
+					   		<a href="/member/logout"><input id="logoutBtn" name="logoutBtn" type="button" value="Logout"></a>
 					   </div>
 				   </td>
 				   <td>
