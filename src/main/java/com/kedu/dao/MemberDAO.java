@@ -45,7 +45,7 @@ public class MemberDAO {
 
 
 	public int delete(String id){
-		String sql = "delete from members where id = ?";
+		String sql = "delete from member where id = ?";
 		return jdbc.update(sql, id);
 	}
 	

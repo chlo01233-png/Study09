@@ -135,7 +135,7 @@
 				   	    <a href="/boards/board"><input id="toBoardBtn" name="guestBook" type="button" value="게시판"></a>
 				   </td>
 				   	   <td>
-					   	    <a href="/members/myPage"><input id="toMyPage" name="myPage" type="button" value="마이페이지"></a>
+					   	    <a href="/member/mypage"><input id="toMyPage" name="myPage" type="button" value="마이페이지"></a>
 					   </td>
 				   <td>
 					   <div id="logoutBtn"> 
@@ -143,7 +143,7 @@
 					   </div>
 				   </td>
 				   <td>
-				   		<a href="/members/delete"><input style="background-color:" type="button" value="회원탈퇴" id="delBtn"></a>
+				   		<a href="/member/toDelete"></a><input style="background-color:" type="button" value="회원탈퇴" id="delBtn"></a>
 				   </td>
 			   </tr>
 		  	</th>

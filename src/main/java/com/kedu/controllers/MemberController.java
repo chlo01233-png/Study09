@@ -64,10 +64,10 @@ public class MemberController {
 	
 	@RequestMapping("/mypage")
 	public String toMypage(HttpSession session, Model model) throws Exception{
-		String id = (String)session.getAttribute("loginId");
+		String id = (String)session.getAttribute("loginID");
 		MemberDTO inform = dao.select(id);
 		model.addAttribute("inform", inform);
-		return "members/mypage";
+		return "member/mypage";
 	}
 	
 	@RequestMapping("/update")
@@ -88,7 +88,7 @@ public class MemberController {
 	
 	@RequestMapping("/delete")
 	public String delete(HttpSession session, Model model){
-		String id = (String)session.getAttribute("loginId");
+		String id = (String)session.getAttribute("loginID");
 		dao.delete(id);
 		session.invalidate();
 		return "redirect:/";
