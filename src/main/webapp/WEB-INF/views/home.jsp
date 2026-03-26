@@ -132,10 +132,10 @@
 			   ${loginID}님 환영합니다.
 			   <tr>
 			   	   <td>
-				   	    <a href="/boards/board"><input id="toBoardBtn" name="guestBook" type="button" value="게시판"></a>
+				   	    <a href="/boards/list"><input id="toBoardBtn" name="guestBook" type="button" value="게시판"></a>
 				   </td>
 				   	   <td>
-					   	    <a href="/members/myPage"><input id="toMyPage" name="myPage" type="button" value="마이페이지"></a>
+					   	    <a href="/member/myPage"><input id="toMyPage" name="myPage" type="button" value="마이페이지"></a>
 					   </td>
 				   <td>
 					   <div id="logoutBtn"> 
@@ -143,7 +143,7 @@
 					   </div>
 				   </td>
 				   <td>
-				   		<a href="/members/delete"><input style="background-color:" type="button" value="회원탈퇴" id="delBtn"></a>
+				   		<a href="/member/delete"><input style="background-color:" type="button" value="회원탈퇴" id="delBtn"></a>
 				   </td>
 			   </tr>
 		  	</th>

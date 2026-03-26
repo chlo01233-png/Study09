@@ -51,7 +51,7 @@ public class MemberController {
 		if(dao.addMember(dto1) > 0) {
 			return "redirect:/";
 		};
-		return "redirect:members/error";
+		return "redirect:member/error";
 		
 	}
 	
@@ -67,13 +67,13 @@ public class MemberController {
 		String id = (String)session.getAttribute("loginId");
 		MemberDTO inform = dao.select(id);
 		model.addAttribute("inform", inform);
-		return "members/mypage";
+		return "member/mypage";
 	}
 	
 	@RequestMapping("/update")
 	public String update(MemberDTO dto) {
 		dao.update(dto);
-		return "redirect:/members/mypage";
+		return "redirect:/member/mypage";
 	}
 	
 	@RequestMapping("/back")
