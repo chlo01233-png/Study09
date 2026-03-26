@@ -11,7 +11,7 @@ import com.kedu.dao.BoardsDAO;
 import com.kedu.dto.BoardsDTO;
 
 @Controller
-@RequestMapping("/board")
+@RequestMapping("/boards")
 public class BoardsController {
 	
 	@Autowired
@@ -21,7 +21,7 @@ public class BoardsController {
 	public String toList(Model model) {
 		List<BoardsDTO> list = dao.selectAll();
 		model.addAttribute("list", list);
-		return "board/list";
+		return "boards/list";
 	}
 
 }

@@ -18,7 +18,7 @@ public class BoardsDAO {
 	private JdbcTemplate jdbc;
 	
 	public List<BoardsDTO> selectAll() {
-		String sql = "select * from board order by seq desc";
+		String sql = "select * from boards order by seq desc";
 		return jdbc.query(sql, new BeanPropertyRowMapper<BoardsDTO>(BoardsDTO.class));		
 	}
 }
