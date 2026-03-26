@@ -14,6 +14,7 @@ public class MemberDAO {
 	
 	public boolean login(String id, String pw) {
 		String sql = "select count(*) from member where id = ? and pw = ?";
+		System.out.println(pw);
 		int result = jdbc.queryForObject(sql,Integer.class,id,pw);
 		if(result > 0) {
 			return true;
@@ -29,7 +30,7 @@ public class MemberDAO {
 	}
 	
 	public int update(MemberDTO dto){
-		String sql = "update members set phone = ?, email = ?, zipcode = ?, address1 = ?, address2 = ? where id = ?";
+		String sql = "update member set phone = ?, email = ?, zipcode = ?, address1 = ?, address2 = ? where id = ?";
 		return jdbc.update(sql, dto.getPhone(), dto.getEmail(), dto.getZipcode(), 
 				dto.getAddress1(), dto.getAddress2(), dto.getId() );
 	}

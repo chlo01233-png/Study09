@@ -25,11 +25,17 @@ public class MemberController {
 	@RequestMapping("/login")
 	public String login(String id, String pw,HttpSession session) {
 		boolean result = dao.login(id,eu.getSha512(pw));
+		System.out.println(pw);
 		if(result) {
 			session.setAttribute("loginID", id);
 		}
 		System.out.println(result);
 		return "redirect:/";	
+	}
+	
+	@RequestMapping("/join")
+	public String join() {
+		return "member/joinform";
 	}
 
 	@RequestMapping("/signup")
@@ -51,7 +57,7 @@ public class MemberController {
 		if(dao.addMember(dto1) > 0) {
 			return "redirect:/";
 		};
-		return "redirect:members/error";
+		return "redirect:member/error";
 		
 	}
 	
@@ -67,20 +73,12 @@ public class MemberController {
 		String id = (String)session.getAttribute("loginID");
 		MemberDTO inform = dao.select(id);
 		model.addAttribute("inform", inform);
-		
-		   
-	    if (inform == null) {
-	        session.invalidate();
-	        return "redirect:/";
-	    }
-	    System.out.println("// 🔥 DB에 없는 경우 방어");
 		return "member/mypage";
 	}
 	
 	@RequestMapping("/update")
 	public String update(MemberDTO dto) {
 		dao.update(dto);
-
 		return "redirect:/member/mypage";
 	}
 	
