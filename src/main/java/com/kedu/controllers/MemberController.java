@@ -74,5 +74,23 @@ public class MemberController {
 		dao.update(dto);
 		return "redirect:/members/mypage";
 	}
+	
+	@RequestMapping("/back")
+	public String toHome() {
+		return "redirect:/";
+	}
+	
+	@RequestMapping("/toDelete")
+	public String toDelete() {
+		return "member/deleteconfirm";
+	}
+	
+	@RequestMapping("/delete")
+	public String delete(HttpSession session, Model model){
+		String id = (String)session.getAttribute("loginId");
+		dao.delete(id);
+		session.invalidate();
+		return "redirect:/";
+	}
 
 }

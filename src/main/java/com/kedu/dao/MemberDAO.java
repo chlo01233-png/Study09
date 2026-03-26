@@ -34,13 +34,19 @@ public class MemberDAO {
 				dto.getAddress1(), dto.getAddress2(), dto.getId() );
 	}
 
-public int addMember(MemberDTO dto) throws Exception {
+	public int addMember(MemberDTO dto) throws Exception {
 		
 		String sql = "insert into member values (?, ?, ?, ?, ?, ?, ?, ?, sysdate)";
 		
 		return jdbc.update(sql,dto.getId(), dto.getPw(), dto.getName(), dto.getPhone(),
 				dto.getEmail(), dto.getZipcode(), dto.getAddress1(), dto.getAddress2());
 		
+	}
+
+
+	public int delete(String id){
+		String sql = "delete from members where id = ?";
+		return jdbc.update(sql, id);
 	}
 	
 
